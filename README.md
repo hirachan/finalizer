@@ -12,7 +12,8 @@ You can also use for cleanup process for docker container, but be careful for th
 
 ## Limitation
 
-This module cannot prevent from kill -9 (SIGKILL).
+- This module cannot prevent from kill -9 (SIGKILL).
+- Child thread in multi thread cannot handle signal. (multi_process is ok)
 
 
 ## Install
