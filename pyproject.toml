@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "finalizer"
+version = "0.1.0"
+description = "This is a context manager to cleanup your environment. Your claenup code will be called even if the program is stopped by Ctrl-C or kill command."
+authors = ["HIRANO Yoshitaka <yo@hirano.cc>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.3"
+mypy = "^0.812"
+flake8 = "^3.9.1"
+autopep8 = "^1.5.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
