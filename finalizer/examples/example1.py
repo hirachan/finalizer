@@ -28,7 +28,7 @@ def task2() -> None:
     print("task2 start")
     with Finalizer(cleanup2):
         sleep(3)
-    print("task2 end")
+        print("task2 end")
 
 
 def cleanup1(opt: str) -> None:
@@ -43,7 +43,7 @@ def task1() -> None:
         sleep(3)
         task2()
         sleep(3)
-    print("task1 end")
+        print("task1 end")
 
 
 def cleanup_main() -> None:
