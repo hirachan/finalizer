@@ -17,13 +17,22 @@ class Finalizer(ContextDecorator):
         self.__prev_sigterm: signal.Handlers = signal.SIG_DFL
 
     def __enter__(self):
-        self.__prev_sigterm = signal.getsignal(signal.SIGTERM)
-        signal.signal(signal.SIGTERM, sig_handler)
+        try:
+            self.__prev_sigterm = signal.getsignal(signal.SIGTERM)
+            signal.signal(signal.SIGTERM, sig_handler)
+        except ValueError:
+            pass
 
     def __exit__(self, exc_type, exc_value, traceback):
-        cur_sigint = signal.getsignal(signal.SIGINT)
-        signal.signal(signal.SIGTERM, signal.SIG_IGN)
-        signal.signal(signal.SIGINT, signal.SIG_IGN)
+        try:
+            cur_sigint = signal.getsignal(signal.SIGINT)
+            signal.signal(signal.SIGTERM, signal.SIG_IGN)
+            signal.signal(signal.SIGINT, signal.SIG_IGN)
+        except ValueError:
+            pass
         self.__cleanup(*self.__args, **self.__kw)
-        signal.signal(signal.SIGTERM, self.__prev_sigterm)
-        signal.signal(signal.SIGINT, cur_sigint)
+        try:
+            signal.signal(signal.SIGTERM, self.__prev_sigterm)
+            signal.signal(signal.SIGINT, cur_sigint)
+        except ValueError:
+            pass
