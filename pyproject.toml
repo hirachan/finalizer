@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "finalizer"
-version = "0.1.2"
+version = "1.0.0"
 description = "This is a context manager to cleanup your environment. Your claenup code will be called even if the program is stopped by Ctrl-C or kill command."
 authors = ["HIRANO Yoshitaka <yo@hirano.cc>"]
 license = "MIT"
