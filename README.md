@@ -3,9 +3,10 @@
 This is a context manager to cleanup your environment. Your claenup code will be called even if the program is stopped by Ctrl-C or kill command.
 
 This is useful for;
-Create a directory in the middle of the process, but you don't want it to remain when the process finished.
-You put temporary data in a database, but you don't want it to remain when the process finished.
-You want to be notified when a program terminates, whether it ends normal or dead.
+- Create a directory in the middle of the process, but you don't want it to remain when the process finished.
+- You put temporary data in a database, but you don't want it to remain when the process finished.
+- You want to be notified when a program terminates, whether it ends normal or dead.
+- Etc...
 
 You can also use for cleanup process for docker container, but be careful for the timeout after docker stop. (Default 10 secs)
 

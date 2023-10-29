@@ -1,8 +1,13 @@
 [tool.poetry]
 name = "finalizer"
-version = "0.1.0"
+version = "0.1.2"
 description = "This is a context manager to cleanup your environment. Your claenup code will be called even if the program is stopped by Ctrl-C or kill command."
 authors = ["HIRANO Yoshitaka <yo@hirano.cc>"]
+license = "MIT"
+homepage = "https://github.com/hirachan"
+repository = "https://github.com/hirachan/finalizer"
+readme = "README.md"
+
 
 [tool.poetry.dependencies]
 python = "^3.8"
